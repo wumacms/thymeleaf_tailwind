@@ -5,13 +5,17 @@
     <title th:remove="all">CTA Section</title>
 </head>
 <body>
-    <section th:fragment="cta" class="bg-indigo-600 py-16">
+    <section th:fragment="cta(blockContent)" class="bg-indigo-600 py-16">
         <div class="max-w-3xl mx-auto text-center px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl font-bold text-white mb-4">立即提升团队协作效率</h2>
-            <p class="text-indigo-100 text-lg mb-8">加入数百家信任我们的企业，开启高效沟通之旅。</p>
+            <h2 class="text-3xl font-bold text-white mb-4" th:text="${blockContent.title}">立即提升团队协作效率</h2>
+            <p class="text-indigo-100 text-lg mb-8" th:text="${blockContent.subtitle}">加入数百家信任我们的企业，开启高效沟通之旅。</p>
             <div class="flex flex-wrap gap-4 justify-center">
-                <a href="#" class="bg-white text-indigo-600 hover:bg-gray-100 px-6 py-3 rounded-full font-medium shadow-lg transition">免费试用30天</a>
-                <a href="#" class="border border-white text-white hover:bg-indigo-500 px-6 py-3 rounded-full font-medium transition">预约演示</a>
+                <a th:href="${blockContent.buttons[0].link}"
+                   class="bg-white text-indigo-600 hover:bg-gray-100 px-6 py-3 rounded-full font-medium shadow-lg transition"
+                   th:text="${blockContent.buttons[0].text}">免费试用30天</a>
+                <a th:href="${blockContent.buttons[1].link}"
+                   class="border border-white text-white hover:bg-indigo-500 px-6 py-3 rounded-full font-medium transition"
+                   th:text="${blockContent.buttons[1].text}">预约演示</a>
             </div>
         </div>
     </section>

@@ -5,13 +5,14 @@
     <title th:remove="all">Top Text Bottom Image Section</title>
 </head>
 <body>
-    <section th:fragment="topTextBottomImage" class="py-20 bg-white">
+    <section th:fragment="top-text-bottom-image(blockContent)" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-gray-900 mb-3">全平台一致体验</h2>
-            <p class="text-gray-600 text-lg max-w-2xl mx-auto">无论是在桌面、网页还是移动端，消息实时同步，操作流畅如一。</p>
+            <h2 class="text-3xl font-bold text-gray-900 mb-3" th:text="${blockContent.title}">全平台一致体验</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto" th:text="${blockContent.description}">无论是在桌面、网页还是移动端，消息实时同步，操作流畅如一。</p>
             <div class="mt-12">
-                <img src="https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
-                     alt="多设备" 
+                <img th:src="${blockContent.image.url}"
+                     th:alt="${blockContent.image.alt}"
+                     alt="多设备"
                      class="rounded-2xl shadow-xl border border-gray-200 w-full h-auto object-cover max-w-5xl mx-auto">
             </div>
         </div>

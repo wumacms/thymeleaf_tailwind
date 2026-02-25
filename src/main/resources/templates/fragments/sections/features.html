@@ -5,32 +5,17 @@
     <title th:remove="all">Features Section</title>
 </head>
 <body>
-    <section th:fragment="features" class="py-20 bg-gray-50">
+    <section th:fragment="features(blockContent)" class="py-20 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">专为商务打造的特性</h2>
-                <p class="text-gray-600 mt-2">从安全到效率，面面俱到</p>
+                <h2 class="text-3xl font-bold text-gray-900" th:text="${blockContent.title}">专为商务打造的特性</h2>
+                <p class="text-gray-600 mt-2" th:text="${blockContent.subtitle}">从安全到效率，面面俱到</p>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-700 mb-4 text-xl">🔒</div>
-                    <h3 class="font-semibold text-gray-900 mb-2">企业级安全</h3>
-                    <p class="text-gray-500 text-sm">端到端加密、SSO、DLP策略，满足合规需求。</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-700 mb-4 text-xl">⚡</div>
-                    <h3 class="font-semibold text-gray-900 mb-2">实时同步</h3>
-                    <p class="text-gray-500 text-sm">毫秒级延迟，跨设备已读回执与状态。</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-700 mb-4 text-xl">🧩</div>
-                    <h3 class="font-semibold text-gray-900 mb-2">无限集成</h3>
-                    <p class="text-gray-500 text-sm">连接200+企业应用，自定义机器人。</p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                    <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-700 mb-4 text-xl">📊</div>
-                    <h3 class="font-semibold text-gray-900 mb-2">分析洞察</h3>
-                    <p class="text-gray-500 text-sm">团队活跃度、响应时间数据可视化。</p>
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100" th:each="feature : ${blockContent.features}">
+                    <div class="w-10 h-10 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-700 mb-4 text-xl" th:text="${feature.icon}">🔒</div>
+                    <h3 class="font-semibold text-gray-900 mb-2" th:text="${feature.title}">企业级安全</h3>
+                    <p class="text-gray-500 text-sm" th:text="${feature.description}">端到端加密、SSO、DLP策略，满足合规需求。</p>
                 </div>
             </div>
         </div>
