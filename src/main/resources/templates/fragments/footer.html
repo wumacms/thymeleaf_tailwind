@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:remove="all">Footer Fragment</title>
+</head>
+<body>
+    <footer th:fragment="footer" class="bg-gray-900 text-gray-300 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="w-6 h-6 bg-indigo-500 rounded-md flex items-center justify-center text-white text-xs">C</div>
+                <span class="font-semibold text-white">ChatFlow</span>
+            </div>
+            <div class="text-sm mt-4 md:mt-0">
+                © 2025 ChatFlow Technologies · 企业聊天解决方案。 保留所有权利。
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

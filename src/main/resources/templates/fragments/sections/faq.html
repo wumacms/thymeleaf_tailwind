@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:remove="all">FAQ Section</title>
+</head>
+<body>
+    <section th:fragment="faq" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">常见问题</h2>
+            <div class="space-y-6">
+                <div class="border-b border-gray-200 pb-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">支持本地部署吗？</h3>
+                    <p class="text-gray-600">是的，企业版支持私有云或本地服务器部署，满足最高安全合规要求。</p>
+                </div>
+                <div class="border-b border-gray-200 pb-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">可以试用多久？</h3>
+                    <p class="text-gray-600">所有新用户均可享受30天全功能免费试用，无需信用卡。</p>
+                </div>
+                <div class="border-b border-gray-200 pb-6">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">数据存储在哪里？</h3>
+                    <p class="text-gray-600">数据存储在云端的独立数据库，可选中国大陆或海外区域，符合当地法规。</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">如何迁移现有聊天记录？</h3>
+                    <p class="text-gray-600">我们提供专业迁移工具，支持从Slack、Teams等平台导入历史数据。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

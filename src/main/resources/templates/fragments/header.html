@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:remove="all">Header Fragment</title>
+</head>
+<body>
+    <header th:fragment="header" class="border-b border-gray-100 bg-white/80 backdrop-blur-sm sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+            <!-- 左侧 Logo占位 + App名称 -->
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-sm">C</div>
+                <span class="text-xl font-semibold text-gray-800">ChatFlow</span>
+            </div>
+            <!-- 右侧 CTA按钮 -->
+            <div>
+                <a href="#" class="inline-flex items-center justify-center bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium px-5 py-2 rounded-full transition-colors shadow-sm">开始免费试用</a>
+            </div>
+        </div>
+    </header>
+</body>
+</html>

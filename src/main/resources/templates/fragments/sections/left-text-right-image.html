@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:remove="all">Left Text Right Image Section</title>
+</head>
+<body>
+    <section th:fragment="leftTextRightImage" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">深度集成工作流</h2>
+                    <p class="text-gray-600 text-lg leading-relaxed">与您使用的工具无缝连接：Jira、GitLab、Google Drive、Salesforce。在聊天中创建任务、分享文件、触发自动化。</p>
+                    <div class="mt-6 flex flex-wrap gap-3">
+                        <span class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium">Slack 导入</span>
+                        <span class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium">API 开放</span>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                         alt="工作流集成" 
+                         class="rounded-2xl shadow-lg border border-gray-200 w-full h-auto object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
