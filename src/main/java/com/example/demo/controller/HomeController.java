@@ -5,7 +5,9 @@ import com.example.demo.entity.Site;
 import com.example.demo.service.BlockService;
 import com.example.demo.service.PageService;
 import com.example.demo.service.SiteService;
+import com.example.demo.service.FooterService;
 import com.example.demo.dto.BlockContentDTO;
+import com.example.demo.dto.FooterDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +28,9 @@ public class HomeController {
     @Autowired
     private BlockService blockService;
 
+    @Autowired
+    private FooterService footerService;
+
     /**
      * 首页
      */
@@ -45,6 +50,10 @@ public class HomeController {
         List<BlockContentDTO> blocks = blockService.getPageBlocks(homePage.getId());
         model.addAttribute("blocks", blocks);
 
+        FooterDTO footer = footerService.getFooterBySiteId(site.getId());
+        if (footer != null) {
+            model.addAttribute("footer", footer);
+        }
         return "index";
     }
 
@@ -66,6 +75,11 @@ public class HomeController {
 
         List<BlockContentDTO> blocks = blockService.getPageBlocks(page.getId());
         model.addAttribute("blocks", blocks);
+
+        FooterDTO footer = footerService.getFooterBySiteId(site.getId());
+        if (footer != null) {
+            model.addAttribute("footer", footer);
+        }
 
         return "page";
     }

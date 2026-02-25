@@ -1,3 +1,186 @@
+## 区块配置JSON示例
+
+### Hero区块配置示例
+```json
+{
+    "title": "企业级即时通讯",
+    "titleHighlight": "让协作更快一步",
+    "subtitle": "安全、高效、可定制——专为现代企业打造的智能聊天平台",
+    "description": "集成工作流与数据洞察，提升团队协作效率",
+    "buttons": [
+        {
+            "text": "开始免费使用",
+            "link": "/signup",
+            "type": "primary",
+            "target": "_self"
+        },
+        {
+            "text": "联系销售",
+            "link": "/contact",
+            "type": "secondary",
+            "target": "_self"
+        }
+    ],
+    "image": {
+        "url": "https://images.unsplash.com/photo-1557804506-669a67965ba0",
+        "alt": "团队协作界面"
+    }
+}
+```
+
+### 特性区块配置示例
+```json
+{
+    "title": "专为商务打造的特性",
+    "subtitle": "从安全到效率，面面俱到",
+    "features": [
+        {
+            "icon": "🔒",
+            "title": "企业级安全",
+            "description": "端到端加密、SSO、DLP策略，满足合规需求。"
+        },
+        {
+            "icon": "⚡",
+            "title": "实时同步",
+            "description": "毫秒级延迟，跨设备已读回执与状态。"
+        },
+        {
+            "icon": "🧩",
+            "title": "无限集成",
+            "description": "连接200+企业应用，自定义机器人。"
+        },
+        {
+            "icon": "📊",
+            "title": "分析洞察",
+            "description": "团队活跃度、响应时间数据可视化。"
+        }
+    ],
+}
+```
+
+### 团队区块配置示例
+```json
+{
+    "title": "核心团队",
+    "subtitle": "来自全球顶尖企业的协作专家",
+    "members": [
+        {
+            "name": "张伟",
+            "position": "CEO & 创始人",
+            "avatar": "https://images.unsplash.com/photo-1560250097-0b93528c311a",
+            "bio": "前微软高级架构师，15年企业软件经验",
+            "social": {
+                "linkedin": "https://linkedin.com/in/zhangwei",
+                "twitter": "https://twitter.com/zhangwei"
+            }
+        },
+        {
+            "name": "陈敏",
+            "position": "CTO",
+            "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2",
+            "bio": "分布式系统专家，曾领导千万级用户平台",
+            "social": {
+                "linkedin": "https://linkedin.com/in/chenmin"
+            }
+        }
+    ],
+    "showSocial": true
+}
+```
+
+### 价格区块配置示例
+```json
+{
+    "title": "灵活定价",
+    "subtitle": "按需选择，无隐藏费用",
+    "plans": [
+        {
+            "name": "基础版",
+            "price": 49,
+            "priceUnit": "月/人",
+            "description": "适合初创团队",
+            "features": [
+                "消息历史1年",
+                "10GB 文件存储",
+                "基础集成"
+            ],
+            "buttonText": "选择基础版",
+            "buttonLink": "/signup/basic",
+            "isPopular": false
+        },
+        {
+            "name": "商业版",
+            "price": 99,
+            "priceUnit": "月/人",
+            "description": "适合成长型企业",
+            "features": [
+                "无限历史",
+                "100GB 存储",
+                "所有集成 + API",
+                "高级支持"
+            ],
+            "buttonText": "选择商业版",
+            "buttonLink": "/signup/business",
+            "isPopular": true
+        },
+        {
+            "name": "企业版",
+            "price": null,
+            "priceText": "定制",
+            "description": "适合大型组织",
+            "features": [
+                "本地部署选项",
+                "无限存储",
+                "专属客户成功",
+                "SSO/合规"
+            ],
+            "buttonText": "联系销售",
+            "buttonLink": "/contact",
+            "isPopular": false
+        }
+    ]
+}
+```
+
+### 问题区块（FAQ）配置示例
+```json
+{
+    "title": "常见问题",
+    "subtitle": "快速解答您的疑问",
+    "layout": "accordion",
+    "faqs": [
+        {
+            "question": "支持本地部署吗？",
+            "answer": "是的，企业版支持私有云或本地服务器部署，满足最高安全合规要求。"
+        },
+        {
+            "question": "可以试用多久？",
+            "answer": "所有新用户均可享受30天全功能免费试用，无需信用卡。"
+        },
+        {
+            "question": "数据存储在哪里？",
+            "answer": "数据存储在云端的独立数据库，可选中国大陆或海外区域，符合当地法规。"
+        },
+        {
+            "question": "如何迁移现有聊天记录？",
+            "answer": "我们提供专业迁移工具，支持从Slack、Teams等平台导入历史数据。"
+        }
+    ]
+}
+```
+
+### 页脚区块配置示例
+```json
+{
+    "companyName": "ChatFlow",
+    "logo": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=64&h=64&fit=crop",
+    "copyright": "© 2025 ChatFlow Technologies · 企业聊天解决方案。 保留所有权利。"
+}
+```
+
+## 初始化数据
+
+```sql
 -- 创建数据库
 CREATE DATABASE IF NOT EXISTS chatflow_cms DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 
@@ -125,23 +308,6 @@ CREATE TABLE block_types (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='区块类型字典表';
 
 -- =====================================================
--- 5. 页脚配置表 (footer_config)
--- =====================================================
-CREATE TABLE footer_config (
-    id VARCHAR(32) PRIMARY KEY COMMENT '配置ID',
-    site_id VARCHAR(32) NOT NULL COMMENT '所属站点ID',
-    copyright VARCHAR(500) COMMENT '版权声明文字',
-    company_name VARCHAR(100) COMMENT '公司名称',
-    logo_image_url VARCHAR(500) COMMENT '页脚Logo图片URL',
-    is_active TINYINT DEFAULT 1 COMMENT '是否启用',
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (site_id) REFERENCES sites(id) ON DELETE CASCADE,
-    UNIQUE KEY uk_site_footer (site_id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='页脚配置表';
-
-
--- =====================================================
 -- 生成UUID的函数（用于插入数据时使用）
 -- =====================================================
 DELIMITER $$
@@ -255,15 +421,11 @@ INSERT INTO blocks (id, site_id, page_id, block_type, block_name, block_content,
 -- 号召区块
 (UUID_SHORT_NO_DASH(), @site_id, @home_page_id, 'cta', '立即行动', 
  '{"title": "立即提升团队协作效率", "subtitle": "加入数百家信任我们的企业，开启高效沟通之旅。", "buttons": [{"text": "免费试用30天", "link": "/signup"}, {"text": "预约演示", "link": "/demo"}]}',
- 50);
-
--- =====================================================
--- 初始化页脚数据
--- =====================================================
-SET @site_id_footer = (SELECT id FROM sites LIMIT 1);
-
-INSERT INTO footer_config (id, site_id, copyright, company_name, logo_image_url) VALUES
-(UUID_SHORT_NO_DASH(), @site_id_footer,
- '© 2025 ChatFlow Technologies · 企业聊天解决方案。保留所有权利。',
- 'ChatFlow',
- 'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=32&h=32&fit=crop');
+ 50),
+ 
+ -- 页脚区块
+(UUID_SHORT_NO_DASH(), @site_id, @home_page_id, 'footer', '页脚区块', 
+ '{"companyName": "ChatFlow","logo": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=64&h=64&fit=crop","copyright": "© 2025 ChatFlow Technologies · 企业聊天解决方案。 保留所有权利。"}',
+ 55);
+ ```
+ 
